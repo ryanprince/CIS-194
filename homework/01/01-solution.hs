@@ -16,11 +16,9 @@ toDigitsRev n
 -- Doubles every second number in the list, moving from right to left.
 -- For example, [1,1,1] == [1,2,1], [1,1,1,1] = [2,1,2,1].
 doubleEveryOther :: [Integer] -> [Integer]
-doubleEveryOther xs =
-  let leftToRight []       = []
-      leftToRight [x]      = [x]
-      leftToRight (a:b:cs) = a : (2 * b) : leftToRight cs
-  in reverse (leftToRight (reverse xs))
+doubleEveryOther xs = let leftToRight (a:b:cs) = a : (2 * b) : leftToRight cs
+                          leftToRight xs'      = xs'
+                      in reverse (leftToRight (reverse xs))
 
 -- Exercise 3
 -- Sums all of the digits that are in the list of inegers.
