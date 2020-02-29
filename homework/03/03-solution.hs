@@ -1,8 +1,11 @@
 {-# OPTIONS_GHC -Wall #-}
 
 -- Exercise 1: Hopscotch
+_s :: [a] -> Int -> [a]
+_s v n = map (v!!) [n-1,2*n-1..length v - 1]
+
 skips :: [a] -> [[a]]
-skips v = map (\j -> map snd (filter (\(i, _) -> i `mod` j == 0) (zip [1..] v))) [1..length v]
+skips v = map (_s v) [1..length v]
 
 -- Exercise 2: Local maxima
 localMaxima :: [Integer] -> [Integer]
