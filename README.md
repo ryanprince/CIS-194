@@ -11,3 +11,5 @@ Week |                                       |                   | Date Complete
 2    | Algebraic Data Types                  | Reading           | 28-Feb-2020
 2    | Real World Haskell, chapters 2 and 3  | Suggested Reading |
 2    | Homework 2                            | Assignment        | 29-Feb-2020
+3    | Recursion patterns, polymorphism, and the prelude | Reading    | 29-Feb-2020
+3    | Homework 3                                        | Assignment | 29-Feb-2020
