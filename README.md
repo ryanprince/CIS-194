@@ -8,7 +8,6 @@ Week |                                       |                   | Date Complete
 1    | Learn You a Haskell for Great Good, chapter 2 | Suggested Reading
 1    | Real World Haskell, chapters 1 and 2  | Suggested Reading |
 1    | Homework 1                            | Assignment        | 15-Feb-2020
----  | ---                                   | ---               | ---
 2    | Algebraic Data Types                  | Reading           | 28-Feb-2020
 2    | Real World Haskell, chapters 2 and 3  | Suggested Reading |
-2    | Homework 2                            | Assignment        |
+2    | Homework 2                            | Assignment        | 29-Feb-2020
