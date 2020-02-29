@@ -15,13 +15,13 @@ fun2 1 = 0
 fun2 n | even n    = n + fun2 (n `div` 2)
        | otherwise = fun2 (3 * n + 1)
 
-hailstone :: Integer -> [Integer]
+hailstone :: Integer -> Integer
 hailstone n
-  | even n    = n : hailstone (n `div` 2)
-  | otherwise = n : hailstone (3 * n + 1)
+  | even n    = n `div` 2
+  | otherwise = 3 * n + 1
 
 fun2' :: Integer -> Integer
-fun2' = sum . filter even . takeWhile (/=1) . hailstone
+fun2' = sum . filter even . takeWhile (/=1) . iterate hailstone
 
 -- Exercise 2: Folding with trees
 data Tree a = Leaf
