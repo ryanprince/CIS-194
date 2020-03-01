@@ -39,7 +39,7 @@ insertBalanced n@(Node 0 _ _ _) Leaf = n
 insertBalanced n@(Node 0 _ _ _) (Node h l v r)
   | minHeight l < (h-1) = Node h (insertBalanced n l) v r
   | minHeight r < (h-1) = Node h l v (insertBalanced n r)
-  | otherwise           = Node (h+1) (insertBalanced n r) v l
+  | otherwise           = Node (h+1) (insertBalanced n l) v r
 insertBalanced _ t = t
 
 foldTree :: [a] -> Tree a
