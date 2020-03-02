@@ -1,5 +1,7 @@
 {-# OPTIONS_GHC -Wall #-}
 
+import Data.List
+
 -- Exercise 1: Wholemeal programming
 fun1 :: [Integer] -> Integer
 fun1 [] = 1
@@ -44,3 +46,21 @@ insertBalanced _ t = t
 
 foldTree :: [a] -> Tree a
 foldTree = foldr insertBalanced Leaf . map (\v -> Node 0 Leaf v Leaf)
+
+-- Exercise 3: More folds!
+-- Returns True if there are an odd number of True values, and False otherwise.
+xor :: [Bool] -> Bool
+xor = odd . foldr (\b n -> if b then (n+1) else n) 0
+
+-- The standard map function implemented using a fold.
+map' :: (a -> b) -> [a] -> [b]
+map' f = foldr ((:) . f) []
+
+-- Exercise 4: Finding primes
+-- Given an integer, generate all the odd primes up to 2n + 2.
+sieveSundaram :: Integer -> [Integer]
+sieveSundaram n =
+  let numbers   = [1..n]
+      crossOff  = nub [m | j <- [1..n], i <- [1..j], let m = i+j+2*i*j, m <= n]
+      numbers'  = filter (\e -> not (e `elem` crossOff)) numbers
+  in map (\m -> 2 * m + 1) numbers'

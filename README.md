@@ -13,3 +13,6 @@ Week |                                       |                   | Date Complete
 2    | Homework 2                            | Assignment        | 29-Feb-2020
 3    | Recursion patterns, polymorphism, and the prelude | Reading    | 29-Feb-2020
 3    | Homework 3                                        | Assignment | 29-Feb-2020
+4    | Higher-order programming and type inference       | Reading    |
+4    | Learn You a Haskell for Great Good chapter "Higher-Order Functions" | Suggested Reading |
+4    | Homework 4                                        | Assignment | 1-Mar-2020
