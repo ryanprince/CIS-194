@@ -37,8 +37,8 @@ minHeight (Node _ l@(Node _ _ _ _) _ r@(Node _ _ _ _)) = 1 + min (minHeight l) (
 minHeight _                                            = 0
 
 insertBalanced :: Tree a -> Tree a -> Tree a
-insertBalanced n@(Node 0 _ _ _) Leaf = n
-insertBalanced n@(Node 0 _ _ _) (Node h l v r)
+insertBalanced n@(Node 0 Leaf _ Leaf) Leaf = n
+insertBalanced n@(Node 0 Leaf _ Leaf) (Node h l v r)
   | minHeight l < (h-1) = Node h (insertBalanced n l) v r
   | minHeight r < (h-1) = Node h l v (insertBalanced n r)
   | otherwise           = Node (h+1) (insertBalanced n l) v r
