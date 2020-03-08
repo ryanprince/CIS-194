@@ -37,8 +37,8 @@ minHeight (Node _ l@(Node _ _ _ _) _ r@(Node _ _ _ _)) = 1 + min (minHeight l) (
 minHeight _                                            = 0
 
 insertBalanced :: Tree a -> Tree a -> Tree a
-insertBalanced n@(Node 0 _ _ _) Leaf = n
-insertBalanced n@(Node 0 _ _ _) (Node h l v r)
+insertBalanced n@(Node 0 Leaf _ Leaf) Leaf = n
+insertBalanced n@(Node 0 Leaf _ Leaf) (Node h l v r)
   | minHeight l < (h-1) = Node h (insertBalanced n l) v r
   | minHeight r < (h-1) = Node h l v (insertBalanced n r)
   | otherwise           = Node (h+1) (insertBalanced n l) v r
@@ -64,3 +64,20 @@ sieveSundaram n =
       crossOff  = nub [m | j <- [1..n], i <- [1..j], let m = i+j+2*i*j, m <= n]
       numbers'  = filter (\e -> not (e `elem` crossOff)) numbers
   in map (\m -> 2 * m + 1) numbers'
+
+-- The function cartProd was given, though I didn't want to use it.
+-- cartProd :: [a] -> [b] -> [(a, b)]
+-- cartProd xs ys = [(x, y) | x <- xs, y <- ys]
+
+-- I wrote this for the fliter step, thinking it would be faster than testing
+-- (e `elem` crossOff) for n times, but in my timing tests, the filter version
+-- works just as well.
+-- removeItems :: Ord a => [a] -> [a] -> [a]
+-- removeItems fromList subtractList =
+--   let removeItemsSorted xs [] = xs
+--       removeItemsSorted [] _  = []
+--       removeItemsSorted (x:xs) (y:ys)
+--         | x < y     = x : removeItemsSorted xs (y:ys)
+--         | x > y     = removeItemsSorted (x:xs) ys
+--         | otherwise = removeItemsSorted xs (y:ys)
+--   in removeItemsSorted (sort fromList) (sort subtractList)
