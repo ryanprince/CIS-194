@@ -16,5 +16,5 @@ Week |                                       |                   | Date Complete
 4    | Higher-order programming and type inference       | Reading    | 18-Mar-2020
 4    | Learn You a Haskell for Great Good chapter "Higher-Order Functions" | Suggested Reading |
 4    | Homework 4                                        | Assignment | 01-Mar-2020
-5    | More polymorphism and type classes    | Reading           |
+5    | More polymorphism and type classes    | Reading           | 19-Mar-2020
 5    | Homework 5                            | Assignment        |
