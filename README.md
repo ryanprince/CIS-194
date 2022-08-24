@@ -1,4 +1,4 @@
-# CIS 194: Introduction to Haskell (UPenn, Spring 2013)
+# Following online notes from CIS 194: Introduction to Haskell (UPenn, Spring 2013)
 
 This repository is where I'm going through the course materials that were published in 2013 to: <https://www.cis.upenn.edu/~cis194/spring13/lectures.html>.
 
